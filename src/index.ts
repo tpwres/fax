@@ -1,6 +1,12 @@
 import { Hono } from 'hono'
 
-const app = new Hono()
+type Bindings = {
+	OAUTH_CLIENT_ID: string
+	AUTH_CALLBACK_URL: string
+}
+
+// The type param here specifies what is available in cloudflare's env (envvars, secrets, bindings)
+const app = new Hono<{ Bindings: Bindings }>()
 
 const GITHUB_AUTH_ENDPOINT = 'https://github.com/login/auth/authorize'
 
@@ -8,8 +14,8 @@ app.get('/auth/login', (c) => {
   const github = new URL(GITHUB_AUTH_ENDPOINT)
   
   // TODO: Replace with BetterAuth?
-  const auth_client_id = process.env.OAUTH_CLIENT_ID as string
-  const auth_callback = process.env.AUTH_CALLBACK_URL as string
+  const auth_client_id = c.env.OAUTH_CLIENT_ID
+  const auth_callback = c.env.AUTH_CALLBACK_URL
   
   const params = github.searchParams
   params.set('client_id', auth_client_id)
