@@ -8,7 +8,7 @@ type Bindings = {
 // The type param here specifies what is available in cloudflare's env (envvars, secrets, bindings)
 const app = new Hono<{ Bindings: Bindings }>()
 
-const GITHUB_AUTH_ENDPOINT = 'https://github.com/login/auth/authorize'
+const GITHUB_AUTH_ENDPOINT = 'https://github.com/login/oauth/authorize'
 
 app.get('/auth/login', (c) => {
   const github = new URL(GITHUB_AUTH_ENDPOINT)
