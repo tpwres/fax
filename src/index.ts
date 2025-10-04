@@ -14,8 +14,8 @@
 import { Hono } from 'hono'
 const app = new Hono()
 
-app.get('/', (context) => {
-  return `Hello worker ${context.req.url}`
+app.get('/', (c) => {
+  return c.text(`Hello worker ${c.req.url}`)
 })
 
 export default {
