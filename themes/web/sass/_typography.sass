@@ -1,0 +1,198 @@
+//@import "fonts/inter/inter-web/inter.css"
+// @font-face
+//   font-family: 'Ubuntu Mono'
+//   src: url("fonts/ubuntu-mono/UbuntuMono-Regular.ttf")
+//   font-display: swap
+
+// Global variables
+\:root
+  // Fonts
+  --sans-font: "Twemoji Country Flags", "Noto Sans", sans-serif
+  --mono-font: "Ubuntu Mono", monospace
+
+html
+  // Set the font globally
+  font-family: var(--sans-font)
+  scroll-behavior: smooth
+
+// Format links & buttons
+a, a:visited
+  color: var(--accent)
+
+a:hover
+  color: var(--dark-aqua)
+  text-decoration: underline
+
+// Format headers
+h1
+  font-size: 3rem
+
+h2
+  font-size: 2.6rem
+  margin-top: 3rem
+
+h3
+  font-size: 2rem
+  margin-top: 3rem
+
+h4
+  font-size: 1.44rem
+
+h5
+  font-size: 1.15rem
+
+h6
+  font-size: 0.96rem
+
+
+// Fix line height when title wraps
+h1, h2, h3
+  line-height: 1.1
+
+
+// Reduce header size on mobile
+@media only screen and (max-width: 720px)
+  h1
+    font-size: 2.5rem
+
+  h2
+    font-size: 2.1rem
+
+  h3
+    font-size: 1.75rem
+
+  h4
+    font-size: 1.25rem
+
+h1, h2, h3, h4, h5, h6
+  margin-bottom: .25rem
+  display: flex
+  align-items: flex-start
+  text-align: left
+
+h1.title
+  color: var(--dark-green)
+
+@mixin trailing-line($color)
+  content: ''
+  background: var($color)
+  flex-grow: 1
+  min-width: 2rem
+  margin: auto
+  margin-left: 1rem
+
+h1:not(.title)
+  color: var(--dark-red)
+  display: flex
+  align-items: flex-start
+  text-align: left
+  margin-top: 1rem
+
+  &:after
+    @include trailing-line(--dark-red)
+    height: 0.3rem
+
+h2
+  color: var(--dark-green)
+  text-align: left
+  &:after
+    @include trailing-line(--dark-green)
+    height: 0.26rem
+
+h3
+  color: var(--dark-blue)
+  &:after
+    @include trailing-line(--dark-blue)
+    height: 0.2rem
+
+h4
+  color: var(--dark-yellow)
+  &:after
+    @include trailing-line(--dark-yellow)
+    height: 0.144rem
+
+h5
+  color: var(--dark-gray)
+  &:after
+    @include trailing-line(--dark-gray)
+    height: 0.115rem
+
+h6
+  color: var(--dark-gray)
+  &:after
+    @include trailing-line(--dark-gray)
+    height: 0.096rem
+
+blockquote
+  margin: 0rem 0 1rem 1rem  //TODO: tweak
+  padding: 0.1rem 0.4rem
+  border-left: 0.35rem solid var(--accent)
+  background: var(--accent-bg)
+  color: var(--text-light)
+  font-style: italic
+
+code
+  color: var(--text-light)
+  background-color: var(--accent-bg)
+  padding: 0.1rem 0.14rem
+  border-radius: 5px
+
+hr
+  color: var(--dark-gray)
+  background-color: var(--dark-gray)
+  height: 0.2rem
+  border: none
+
+// Set the cursor to '?' while hovering over an abbreviation
+abbr
+  cursor: help
+
+blockquote
+  margin: 2rem 0 2rem 2rem
+  padding: 0.4rem 0.8rem
+  border-left: 0.35rem solid var(--accent)
+  color: var(--text-light)
+  font-style: italic
+
+
+cite
+  font-size: 0.9rem
+  color: var(--text-light)
+  font-style: normal
+
+
+// Use mono font for code elements
+code,
+pre,
+pre span,
+kbd,
+samp
+  font-size: 1.075rem
+  font-family: var(--mono-font)
+  color: var(--code)
+
+
+kbd
+  color: var(--preformatted)
+  border: 1px solid var(--preformatted)
+  border-bottom: 3px solid var(--preformatted)
+  border-radius: 5px
+  padding: 0.1rem
+
+
+pre
+  padding: 1rem 1.4rem
+  max-width: 100%
+  overflow: auto
+  overflow-x: auto
+  color: var(--preformatted)
+  background: var(--accent-bg)
+  border: 1px solid var(--border)
+  border-radius: 5px
+
+// Fix embedded code within pre 
+pre code
+  color: var(--preformatted)
+  background: none
+  margin: 0
+  padding: 0

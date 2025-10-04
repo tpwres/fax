@@ -1,0 +1,82 @@
+.header-search
+  flex-grow: 0.5
+
+.search-widget
+  /* align-items: center
+  display: flex
+  gap: 0.25rem
+  max-width: 24rem
+  position: relative
+  width: 100%
+
+  #search_input
+    border: 1px solid currentColor
+    border-radius: 1.5rem
+    min-width: 7rem
+    width: 100%
+    padding-left: 1rem
+    padding-right: 2rem
+    outline: 0 none
+
+    &:invalid
+      width: 1rem
+
+
+  button.search-button
+    position: absolute
+    top: 0
+    right: 1rem
+    background-color: transparent
+    color: var(--text-light)
+    padding: 0
+
+    svg
+      height: 1.5rem
+      width: 1.5rem
+
+      &.spin
+        animation: spin 3s linear infinite
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+
+.search-results
+  display: none
+  position: absolute
+  background: var(--accent-bg)
+  color: var(--text-light)
+  max-height: 50vh
+  overflow: hidden
+  z-index: 100
+
+  .search-results-items
+    padding: 0.25rem 0.5rem 0 0.5rem
+    margin-top: 0
+
+    li.results-item
+      padding: 0.25rem 0
+      text-align: left
+      display: block !important
+      background: var(--accent-bg)
+      color: var(--text-light)
+
+      &:hover, &:focus
+        background: var(--bg)
+        color: var(--dark-aqua)
+
+      @media only screen and (max-width: 360px)
+        padding: 0.25rem
+
+      a.search-result
+        padding: 0 0.5rem
+        text-decoration: none
+        display: block
+
+        #info
+          font-size: 0.9rem
+
+

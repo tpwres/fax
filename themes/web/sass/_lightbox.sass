@@ -1,0 +1,93 @@
+:root:has(dialog[open])
+  overflow: clip
+
+dialog#lb
+  max-height: calc(90vh - 1rem)
+  max-width: calc(100vw - 1rem)
+  background: transparent
+  color: transparent
+  overflow: hidden
+
+  &::backdrop
+    background-color: var(--bg)
+    opacity: 80%
+
+  button.next, button.prev
+    padding: 2rem 0.5rem
+    font-size: 1.5rem
+    background: var(--lightbox-nav-button)
+    color: var(--lightbox-nav-fg)
+    &:hover
+      opacity: 100%
+
+  button.next
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    right: 0
+
+  button.prev
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    left: 0
+
+  button.maximize, button.minimize
+    position: absolute
+    padding: .3rem .5rem
+    color: var(--lightbox-nav-fg)
+    top: 0
+    right: 4rem
+
+  button.minimize
+    display: none
+
+  button.closebtn
+    background: var(--close-button)
+    color: var(--close-button-fg)
+    padding: .3rem .5rem
+
+  form button
+    position: absolute
+    top: 0
+    right: 1rem
+    background: transparent
+
+  figure
+    background: var(--accent-bg)
+    padding: 0.5rem
+    display: flex
+    flex-direction: column
+    max-height: calc(90vh - 1rem)
+    overflow: hide
+
+    .img-container
+      flex: 2 70vh
+      min-height: 30vh
+      max-width: calc(100vw - 4rem)
+      overflow: hide
+
+      &.maximised
+        flex: 2 calc(90vh - 1.5rem)
+        overflow: scroll
+
+  img
+    object-fit: contain
+    height: 100%
+
+  figcaption
+    align-self: flex-end
+    margin: 0 auto
+    color: var(--fg)
+    flex: 1 auto
+    @media screen and (max-width: 720px)
+      font-size: 0.8rem
+
+    p
+      margin-bottom: 0
+
+  .sr-only
+    display: none
+
+.gallery li data
+  display: none
