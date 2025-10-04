@@ -11,8 +11,13 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
+import { Hono } from 'hono'
+const app = new Hono()
+
+app.get('/', (context) => {
+  return `Hello worker ${context.req.url}`
+})
+
 export default {
-	async fetch(request, env, ctx): Promise<Response> {
-			return new Response(`Hello worker ${request.url}`);
-	},
-} satisfies ExportedHandler<Env>;
+	fetch: app.fetch
+}
