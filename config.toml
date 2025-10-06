@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://example.com"
+base_url = "/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -15,4 +15,24 @@ theme = 'web'
 highlight_code = false
 
 [extra]
-# Put all your custom variables here
+default_theme = "dark"
+header_links = [
+  { url = "//tpwres.pl/e/", name = "Events", icon = "calendar-1" },
+  { url = "//tpwres.pl/o/", name = "Orgs", icon = "handshake" },
+  { url = "//tpwres.pl/w/", name = "People", icon = "users" },
+  { url = "//tpwres.pl/tt/", name = "Teams", icon = "biceps-flexed" },
+  { url = "//tpwres.pl/a/", name = "Articles", icon = "book" },
+  { url = "//tpwres.pl/v/", name = "Places", icon = "map-pin-house" },
+  { url = "//tpwres.pl/c/", name = "Championships", icon = "trophy" },
+  { url = "//mf.tpwres.pl", name = "Matchfinder", icon = "crosshair" },
+  { url = "//art.tpwres.pl", name = "Artwall", icon = "image-play" },
+  { url = "//carto.tpwres.pl", name = "Carto", icon = "map" }
+]
+
+footer_links = [
+  { url = "//tpwres.pl/about", name = "About", icon = "info"},
+  { url = "//tpwres.pl/contributing", name = "Contributing", icon = "file-pen-line"},
+  { url = "//github.com/tpwres/teczki-polskiego-wrestlingu", name = "GitHub", icon = "github"},
+  { url = "//tpwres.pl/atom.xml", name = "Atom Feed", icon = "rss"},
+  { url = "//tpwres.pl/authors", name = "Authors", icon = "heart" }
+]
