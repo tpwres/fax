@@ -1,0 +1,8 @@
+{% set sprite = get_url(path="lucide-sprite.svg", trailing_slash=false) %}
+
+<button type="button" id="github-auth" style="cursor:pointer">
+    Authenticate with GitHub
+    <svg class="feather-inline" title="Github">
+        <use href="{{ sprite }}#github"/>
+    </svg>
+</button>

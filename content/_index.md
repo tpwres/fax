@@ -1,7 +1,6 @@
 +++
-template = 'base.html'
-title = 'Asset index'
+template = 'index.html'
+title = 'Fax'
 +++
 
-
-Heloo world from asset dir
+{{ auth_button() }}
