@@ -16,13 +16,16 @@
 			"id": "61433a6d0caf4623b085d9ecf5a7b7ed"
 		}
 	],
-  "assets": {
+  	"assets": {
  		"directory": "public",
 		"run_worker_first": [
 			"/api/*", // API calls go to worker
 			"/auth/*", // and OAuth
 		]
-  }
+  	},
+  	"vars": {
+		"GITHUB_REPO_NAME": "tpwres/teczki-polskiego-wrestlingu"
+  	},
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
