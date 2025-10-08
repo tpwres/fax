@@ -27,10 +27,12 @@ nav.menu
     margin: 0
     padding: 0
     text-decoration: none
-    color: var(--fg)
     &:hover
       text-decoration: underline
       color: var(--dark-aqua)
+
+    &:not([role="button"])
+      color: var(--fg)
 
   .sitename:hover
     color: var(--dark-aqua)
@@ -48,6 +50,10 @@ nav.menu
   .nav-right-list
     list-style-type: none
     padding: 0
+    display: flex
+
+    &.keep li a
+      padding: 0.2rem 0.5rem
 
   @media only screen and (max-width: 720px)
     margin-left: 48px

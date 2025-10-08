@@ -3,4 +3,4 @@ template = 'index.html'
 title = 'Fax'
 +++
 
-{{ auth_button() }}
+Authenticate with your Github account to continue.
